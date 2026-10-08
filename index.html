@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f3ed" />
+    <meta name="description" content="Generate monthly calendars for 5 × 8.25-inch journals. Print any year with optional cutting guides." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Journal Calendar" />
+    <meta property="og:title" content="Journal Calendar" />
+    <meta property="og:description" content="Generate monthly calendars for 5 × 8.25-inch journals. Print any year with optional cutting guides." />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Journal Calendar with an enlarged monthly calendar and handwritten notes for New Year's, a movie outing, and a birthday." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Journal Calendar" />
+    <meta name="twitter:description" content="Generate monthly calendars for 5 × 8.25-inch journals. Print any year with optional cutting guides." />
+    <meta name="twitter:image:alt" content="Journal Calendar with an enlarged monthly calendar and handwritten notes for New Year's, a movie outing, and a birthday." />
+    <title>Journal Calendar</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="intro screen-only">
+        <h1>Journal Calendar</h1>
+        <p class="description">Monthly calendars for 5 × 8.25-inch journals. Choose a year to print.</p>
+      </header>
+
+      <section class="controls screen-only" aria-label="Calendar settings">
+        <div class="year-control">
+          <label for="year">Your year</label>
+          <input id="year" type="text" inputmode="numeric" aria-describedby="year-error" autocomplete="off" spellcheck="false" />
+        </div>
+        <label class="guide-control">
+          <input id="cut-guides" type="checkbox" />
+          <span>Add cutting guides<span class="control-note">Same trim size for every month</span></span>
+        </label>
+        <button id="print" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6z" />
+          </svg>
+          Print calendar
+        </button>
+        <p id="year-error" class="error" role="alert"></p>
+      </section>
+
+      <section class="preview-heading screen-only" aria-label="Printing information">
+        <p id="preview-summary" role="status"></p>
+        <p>Letter 8.5 × 11 in <span aria-hidden="true">/</span> Print at 100%</p>
+      </section>
+      <p class="print-note screen-only">One month per sheet. In the print dialog, use Letter portrait, no extra margins, and turn off headers and footers. You can also choose Save as PDF.</p>
+      <div id="calendar" class="calendar-pages" aria-label="Monthly calendar previews"></div>
+      <noscript><p>This calendar needs JavaScript to calculate dates. Enable JavaScript and reload the page.</p></noscript>
+    </main>
+  </body>
+</html>
